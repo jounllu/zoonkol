@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: daneky
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: daneky
+  template:
+    metadata:
+      labels:
+        app: daneky
+    spec:
+      containers:
+      - image: okteto.dev/daneky:latest
+        name: daneky
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "fb357ec7-2085-4a92-b2a7-020bd106ba74"
+        - name: Vless_Path
+          value: "/vlaae555"
+        - name: Vmess_UUID
+          value: "fb357ec7-2085-4a92-b2a7-020bd106ba74"
+        - name: Vmess_Path
+          value: "/vm4ee666"
+        - name: Share_Path
+          value: "/v2link"
